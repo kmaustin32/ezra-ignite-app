@@ -30,11 +30,20 @@ const nextYear = `${currentYear + 1}-${currentMonth}-${currentDay}`;
 //Popular Games
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
-console.log('DEBUG current day: ' + currentDay);
-console.log('DEBUG current fullDate: ' + currentDate);
-console.log('DEBUG nextYear: ' + nextYear);
-console.log('DEBUG lastYear: ' + lastYear);
-
 export const popularGamesUrl = () => {
     return `${base_url}${popular_games}`;
-}
+};
+
+//Upcoming Games
+const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page_size=10`
+
+export const upcomingGamesUrl = () => {
+    return `${base_url}${upcoming_games}`;
+};
+
+//New Games
+const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page_size=10`;
+
+export const newGamesUrl = () => {
+    return `${base_url}${new_games}`
+};
