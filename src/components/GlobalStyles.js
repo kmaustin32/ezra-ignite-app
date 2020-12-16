@@ -28,7 +28,7 @@ const GlobalStyle = createGlobalStyle`
     }
     h3 {
         font-size: 1.3rem;
-        padding: .5rem;
+        padding: .5rem 0rem;
         color: #333;
     }
     p {
