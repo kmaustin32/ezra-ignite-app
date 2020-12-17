@@ -10,7 +10,6 @@ export const loadDetails = (id) => async (dispatch) => {
     });
 
 
-
     dispatch({
         type: "GET_DETAIL",
         payload: {
