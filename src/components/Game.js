@@ -12,6 +12,7 @@ import {smallImage} from '../util';
 
 const Game = ({name, released, image, id}) => {
 
+    const stringId = id.toString();
     const dispatch = useDispatch();
     const loadDetailHandler = () => {
         document.body.style.overflow = 'hidden'; 
@@ -20,10 +21,10 @@ const Game = ({name, released, image, id}) => {
 
     return(
         <Link to={`/game/${id}`}>
-            <StyledGame onClick={loadDetailHandler}>
-                <h3>{name}</h3>
+            <StyledGame onClick={loadDetailHandler} layoutId={stringId}>
+                <motion.h3 layoutId={`titile ${stringId}`}>{name}</motion.h3>
                 <p>{released}</p>
-                <img src={smallImage(image, 640)} alt={name}/>
+                <motion.img layoutId={`image ${stringId}`} src={smallImage(image, 640)} alt={name}/>
             </StyledGame>
         </Link>
     );
