@@ -1,16 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 //Style and Animations
 import styled from 'styled-components';
 import {motion} from 'framer-motion';
+import {FadeIn} from '../Animations';
+//Redux and Routes
+import {fetchSearch} from '../actions/gamesAction';
+import {useDispatch} from 'react-redux';
+
 
 const Nav = () => {
+    const dispatch = useDispatch();
+    const [textInput, setTextInput] = useState('');
+
+    const inputHandler = (event) => {
+        setTextInput(event.target.value);
+    };
+
+    const sumbitSearch = (event) => {
+        event.preventDefault();
+        dispatch(fetchSearch(textInput));
+        setTextInput('');
+    };
+
+    const clearSearch = () => {
+        dispatch({
+            type: "CLEAR_SEARCH"
+        })
+    }
+
     return(
-        <StyledNav>
+        <StyledNav
+        variants={FadeIn}
+        initial="hidden"
+        animate="show">
             <StyledTitle>Ignite</StyledTitle>
-            <div className="search">
-                <input type="text"/>
-                <button>Search</button>
-            </div>
+            <form className="search">
+                <input type="text" value={textInput} onChange={inputHandler}/>
+                <button type='submit' onClick={sumbitSearch}>Search</button>
+                <button style={{backgroundColor: '#FF6666'}} type='submit' onClick={clearSearch}>Clear</button>
+            </form>
         </StyledNav>
     )
 };
@@ -40,6 +68,7 @@ const StyledNav = styled(motion.nav)`
 const StyledTitle = styled(motion.h3)`
     font-weight: bold;
     font-size: 2rem;
+    cursor: pointer;
 `;
 
 

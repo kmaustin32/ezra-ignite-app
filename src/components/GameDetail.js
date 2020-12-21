@@ -14,7 +14,6 @@ import xbox from '../img/xbox.svg';
 import nintendo from '../img/nintendo.svg';
 import apple from '../img/apple.svg';
 import gamepad from '../img/gamepad.svg';
-import { loadGames } from '../actions/gamesAction';
 //Star Images
 import starEmpty from '../img/star-empty.png';
 import starFull from '../img/star-full.png';
@@ -86,7 +85,7 @@ const GameDetail = ({pathId}) => {
                             <h3>Platforms</h3>
                             <Platforms>
                                 {game.platforms.map(item => (
-                                    <img key={item.platform.id} src={getPlatform(item.platform.name)}>     
+                                    <img key={item.platform.id} src={getPlatform(item.platform.name)} alt=''>     
                                     </img>
                                 ))}
                             </Platforms>
