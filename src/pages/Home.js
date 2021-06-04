@@ -11,6 +11,7 @@ import {motion, AnimatePresence, AnimateSharedLayout} from 'framer-motion';
 import {useLocation} from 'react-router-dom';
 import {FadeIn} from '../Animations';
 
+
 const Home = () => {
     //Fetch Games
     const dispatch = useDispatch();

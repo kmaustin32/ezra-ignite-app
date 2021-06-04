@@ -28,7 +28,7 @@ const Game = ({name, released, image, id}) => {
             variants={PopUp}
             initial="hidden"
             animate="show">
-                <motion.h3 layoutId={`titile ${stringId}`}>{name}</motion.h3>
+                <motion.h3 layoutId={`title ${stringId}`}>{name}</motion.h3>
                 <p>{released}</p>
                 <motion.img layoutId={`image ${stringId}`} src={smallImage(image, 640)} alt={name}/>
             </StyledGame>
