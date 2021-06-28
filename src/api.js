@@ -52,15 +52,15 @@ export const newGamesUrl = () => {
 
 //Game Details
 export const getDetailsUrl = (game_id) => {
-    return `${base_url}games/${game_id}`
+    return `${base_url}games/${game_id}?key=${REACT_APP_API_KEY}`
 }
 
 //Game Screenshots
 export const screenshotsUrl = (game_id) => {
-    return `${base_url}games/${game_id}/screenshots`
+    return `${base_url}games/${game_id}/screenshots?key=${REACT_APP_API_KEY}`
 }
 
 //Searchd Game
 export const searchedGameUrl = (game_name) => {
-    return `${base_url}games?search=${game_name}&page_size=9`
+    return `${base_url}games?key=${REACT_APP_API_KEY}&search=${game_name}&page_size=9`
 }
