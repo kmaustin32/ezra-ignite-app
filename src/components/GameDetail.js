@@ -77,7 +77,7 @@ const GameDetail = ({pathId}) => {
                 <Detail layoutId={pathId}>
                     <Stats>
                         <div className="rating">
-                            <motion.h3 layoutId={`titile ${pathId}`}>{game.name}</motion.h3>
+                            <motion.h3 layoutId={`title ${pathId}`}>{game.name}</motion.h3>
                             <p>Rating: {game.rating}</p>
                             {getStars(game.rating)}
                         </div>
